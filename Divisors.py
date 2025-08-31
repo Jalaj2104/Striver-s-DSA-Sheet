@@ -1,7 +1,13 @@
+import math
 n = int(input("Enter a number"))
+r = int(math.sqrt(n))
 arr = []
-i = 1
-for i in range(1,n+1):
+for i in range(2,r+1):
     if(n%i == 0):
-        arr.append(i)
+        if(n/i == i):
+            arr.append(i)
+        else:
+            arr.extend([i,n/i])
+arr.extend([1,n])
+arr.sort()
 print(arr)
